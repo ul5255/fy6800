@@ -6,7 +6,7 @@ import serial.tools.list_ports
 __port = None
 def req(cmd): __port.write((cmd+'\n').encode())
 def raw(bytes): __port.write(bytes)
-def resp(): __port.readall().decode().rstrip('\n')
+def resp(): return __port.readall().decode().rstrip('\n')
 def ch(i): return ['M', 'F'][i-1]
 
 def open():
