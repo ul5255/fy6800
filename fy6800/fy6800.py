@@ -34,7 +34,7 @@ def arb(i, one_period):
     assert(len(one_period) == 2**13)
     # byte n: lower 8bit, byte n+1: upper 6bit
     seq = []
-    for v in one_period: seq += [v & 255, (v >> 8) & 255]
+    for v in one_period: seq += [v & 255, (v >> 8) & 63]
     seq = bytearray(seq)
     req(f"DDS_WAVE{chr(i-1 + ord('1'))}")
     assert(resp() == 'W')
