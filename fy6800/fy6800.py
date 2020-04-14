@@ -1,6 +1,5 @@
 import math, serial, serial.tools.list_ports
 
-
 ch = {1: 'M', 2: 'F'}
 def dBm(v): return math.sqrt(math.pow(10.0, v/10.0)/2.5)*2.0
 def MHz(v): return 1000*kHz(v)
@@ -10,9 +9,9 @@ def mHz(v): return 1000*uHz(v)
 def uHz(v): return v
 
 class FY6800(object):
-    def w(self, cmd): self.port.write((cmd+'\n').encode())
+    def w(self, chars): self.port.write((chars+'\n').encode())
     def r(self): return self.port.readall().decode().rstrip('\n')
-    def cmd(self, cmd): self.w(cmd); return self.r()
+    def cmd(self, chars): self.w(chars); return self.r()
 
     def __init__(self):
         self.port = None
@@ -23,12 +22,12 @@ class FY6800(object):
             self.port = None
         assert(self.port is not None)
 
-    def a(self, n, v): self.cmd(f"W{ch[n]}A{v:02.4f}")
-    def f(self, n, frq): self.cmd(f"W{ch[n]}F{frq:014d}")
-    def off(self, n): self.cmd(f"W{ch[n]}N0")
-    def on(self, n): self.cmd(f"W{ch[n]}N1")
+    def amplitude(self, n, v): self.cmd(f"W{ch[n]}A{v:02.4f}")
+    def frequency(self, n, frq): self.cmd(f"W{ch[n]}F{frq:014d}")
+    def disable(self, n): self.cmd(f"W{ch[n]}N0")
+    def enable(self, n): self.cmd(f"W{ch[n]}N1")
 
-    def arb(self, i, one_period):
+    def store_waveform(self, i, one_period):
         assert(i in range(1, 65))
         assert(len(one_period) == 2**13)
         assert(self.cmd(f"DDS_WAVE{i:d}") == 'W')

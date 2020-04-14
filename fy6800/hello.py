@@ -1,8 +1,8 @@
 from fy6800 import FY6800, dBm, MHz, kHz, Hz
 
 g = FY6800()
-g.off(1)
-g.off(2)
+g.disable(1)
+g.disable(2)
 
 #
 #  ^   ___
@@ -15,9 +15,9 @@ high = [2**14 - 1] * 2**11
 down = [v << 3 for v in range(2**11-1, -1, -1)]
 low = [0] * 2**11
 
-g.arb(61, up+high+down+low)
+g.store_waveform(61, up+high+down+low)
 
 g.cmd('WMW00')
-g.a(1, dBm(0))
-g.f(1, MHz(1)+kHz(456))
-g.on(1)
+g.amplitude(1, dBm(0))
+g.frequency(1, MHz(1)+kHz(456))
+g.enable(1)
