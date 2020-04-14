@@ -11,7 +11,6 @@ def uHz(v): return v
 
 class FY6800(object):
     def req(self, cmd): self.port.write((cmd+'\n').encode())
-    def raw(self, bytes): self.port.write(bytes)
     def resp(self): return self.port.readall().decode().rstrip('\n')
 
     def __init__(self):
@@ -37,5 +36,5 @@ class FY6800(object):
         self.req(f"DDS_WAVE{i:d}")
         assert(self.resp() == 'W')
         chunk_size = 2**8
-        for j in range(0, len(seq), chunk_size): self.raw(seq[j:j+chunk_size])
+        for j in range(0, len(seq), chunk_size): self.port.write(seq[j:j+chunk_size])
         assert(self.resp() == 'HN')
