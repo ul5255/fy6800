@@ -38,4 +38,4 @@ class FY6800(object):
         assert(self.resp() == 'W')
         chunk_size = 2**8
         for j in range(0, len(seq), chunk_size): self.raw(seq[j:j+chunk_size])
-        assert(resp() == 'HN')
+        assert(self.resp() == 'HN')

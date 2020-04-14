@@ -1,0 +1,31 @@
+waveForms = ("Sine", "Square", "CMOS", "Adj Pulse", "DC", "Triangle",
+             "Ramp", "Negative Ramp", "Stair Triangle", "Stairstep",
+             "Negative Stairstep", "Positive Exponent", "Negative Exponent",
+             "Positive Falling Exponent", "Negative Falling Exponent",
+             "Positive Logrithm", "Negative Logrithm", "Positive Falling Logrithm",
+             "Negative Falling Logrithm", "Positive Full Wave", "Negative Full Wave",
+             "Positive Half Wave", "Negative Half Wave", "Lorentz Pulse", "Multitone",
+             "Random Noise", "ECG", "Trapezoidal Pulse", "Sinc Pulse", "Impulse",
+             "Gauss White Noise", "AM", "FM", "Chirp")
+
+Ch1WaveForms = {'Sine': '00', 'Square': '01', 'CMOS': '02', 'Adj Pulse': '03', 'DC': '04', 'Triangle': '05',
+                'Ramp': '06', 'Negative Ramp': '07', 'Stair Triangle': '08', 'Stairstep': '09',
+                'Negative Stairstep': '10', 'Positive Exponent': '11', 'Negative Exponent': '12',
+                'Positive Falling Exponent': '13', 'Negative Falling Exponent': '14',
+                'Positive Logrithm': '15', 'Negative Logrithm': '16', 'Positive Falling Logrithm': '17',
+                'Negative Falling Logrithm': '18', 'Positive Full Wave': '19', 'Negative Full Wave': '20',
+                'Positive Half Wave': '21', 'Negative Half Wave': '22', 'Lorentz Pulse': '23',
+                'Multitone': '24', 'Random Noise': '25', 'ECG': '26', 'Trapezoidal Pulse': '27',
+                'Sinc Pulse': '28', 'Impulse': '29', 'Gauss White Noise': '30', 'AM': '31',
+                'FM': '32', 'Chirp': '33'}
+
+Ch2WaveForms = {'Sine': '00', 'Square': '01', 'CMOS': '02', 'DC': '03', 'Triangle': '04',
+                'Ramp': '05', 'Negative Ramp': '06', 'Stair Triangle': '07', 'Stairstep': '08',
+                'Negative Stairstep': '09', 'Positive Exponent': '10', 'Negative Exponent': '11',
+                'Positive Falling Exponent': '12', 'Negative Falling Exponent': '13',
+                'Positive Logrithm': '14', 'Negative Logrithm': '15', 'Positive Falling Logrithm': '16',
+                'Negative Falling Logrithm': '17', 'Positive Full Wave': '18', 'Negative Full Wave': '19',
+                'Positive Half Wave': '20', 'Negative Half Wave': '21', 'Lorentz Pulse': '22',
+                'Multitone': '23', 'Random Noise': '24', 'ECG': '25', 'Trapezoidal Pulse': '26',
+                'Sinc Pulse': '27', 'Impulse': '28', 'Gauss White Noise': '29', 'AM': '30',
+                'FM': '31', 'Chirp': '32'}

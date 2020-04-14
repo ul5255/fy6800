@@ -1,4 +1,4 @@
-from fy6800 import FY6800, dbM, MHz, kHz, Hz
+from fy6800 import FY6800, dBm, MHz, kHz, Hz
 
 
 g = FY6800()
