@@ -10,7 +10,7 @@ high = [2**14 - 1] * 2**11
 down = [v << 3 for v in range(2**11-1, -1, -1)]
 low = [0] * 2**11
 
-g.arb(1, up+high+down+low)
+g.arb(64, up+high+down+low)
 
 g.req('WMW00')
 g.a(1, dBm(0))
